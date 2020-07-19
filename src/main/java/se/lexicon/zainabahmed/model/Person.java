@@ -42,7 +42,7 @@ public class Person {
                vowels = "aeiou",                          //ASCII decimal lower 97, 101, 105, 111, 117
                consonants = "bcdfghjklmnpqrstvwxyz",
                space = " ",                             // ascii dec code   32
-               firstLetter ="",
+               firstLetter,
                addVowel;
         int nameLength = 3;
         Random rnd = new Random();
@@ -51,7 +51,7 @@ public class Person {
                 sb.append(alphabet.charAt(rnd.nextInt(alphabet.length()-1)));  // generate string of length nameLength
         }
         sb.insert(rnd.nextInt(nameLength),vowels.charAt(rnd.nextInt(vowels.length()-1)));  // adding a vowel
-        firstLetter =  sb.substring(0,1).toUpperCase();   // Capitalizing first letter
+        firstLetter =  sb.substring(0,1).toUpperCase();   // Capitalizing first letter, replacing in name
         sb.replace(0,1, firstLetter);
         this.firstName = sb.toString();    //converting to string and setting to object local variable first name
         System.out.println(this.firstName);  //printing for my own reference
@@ -66,7 +66,7 @@ public class Person {
     public void setLastName() {
         String alphabet = "aeiouaeioubcdefghijklmnopqrstuvwxyzaeiou",  //adding extra vowels in my seed string
                 vowels = "aeiou",                          //ASCII decimal lower 97, 101, 105, 111, 117
-                firstLetter ="";
+                firstLetter;
         int nameLength = 4;
         Random rnd = new Random();
         StringBuilder sb = new StringBuilder(nameLength);
